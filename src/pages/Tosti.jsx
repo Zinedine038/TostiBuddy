@@ -23,7 +23,7 @@ export function Tosti() {
         <Link to="/Result">
             <button
             onClick={() => console.log("State:", tostiList)}
-            className="btn btn-secondary mt-10"
+            className="btn btn-secondary mt-20 h-15 text-3xl"
             >
             Bereken boodschappenlijstje!
             </button>

@@ -22,20 +22,26 @@ export function Result() {
 
 
     function calculateBread() {
-        const totalBread = (tostiList.reduce((acc, tosti) => acc + tosti.slider, 0)*2) - bread;
-        const wholeLoaves = Math.floor(totalBread / breadLoaf);
-        const halfLoaves = Math.ceil((totalBread % breadLoaf) / (breadLoaf / 2));
-        if (wholeLoaves <= 0 && halfLoaves <= 0) {
+        const totalSlicesNeeded = tostiList.reduce((acc, tosti) => acc + tosti.slider, 0) * 2 - bread;
+    
+        if (totalSlicesNeeded <= 0) {
             return "Geen brood meer nodig";
-        } else if (wholeLoaves > 0 && halfLoaves > 0) {
+        }
+    
+        const wholeLoaves = Math.floor(totalSlicesNeeded / breadLoaf);
+        const remainingSlices = totalSlicesNeeded % breadLoaf;
+    
+        const halfLoaves = remainingSlices > 0 ? 1 : 0;
+    
+        if (wholeLoaves > 0 && halfLoaves > 0) {
             return `${wholeLoaves} hele en ${halfLoaves} halve`;
         } else if (wholeLoaves > 0) {
             return `${wholeLoaves} hele`;
         } else {
             return `${halfLoaves} halve`;
         }
-
     }
+    
 
     function calculateCheese() {
         const totalCheese = tostiList.reduce((acc, tosti) => acc + (tosti.slider * 2), 0) - cheese;
@@ -80,28 +86,28 @@ export function Result() {
     }
 
     return(
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-15rem)]">
-            <h1 className="text-4xl font-bold mb-4">Resultaat</h1>
-            <p className="text-lg mb-6">Boodschappenlijst:</p>
-            <div className="flex flex-col gap-2 w-[300px]">
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-40rem)]">
+            <h1 className="text-8xl font-bold mb-4">Resultaat</h1>
+            <p className="text-4xl mb-10">Boodschappenlijst:</p>
+            <div className="flex flex-col gap-2 w-[500px] text-2xl">
                 <div className="flex justify-between">
-                    <span className="font-medium">Brood:</span>
+                    <span className="font-bold">Brood:</span>
                     <span>{calculateBread()}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="font-medium">Kaas:</span>
+                    <span className="font-bold">Kaas:</span>
                     <span>{calculateCheese()}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="font-medium">Ham:</span>
+                    <span className="font-bold">Ham:</span>
                     <span>{calculateHam()}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="font-medium">Ketchup:</span>
+                    <span className="font-bold">Ketchup:</span>
                     <span>{calculateKetchup()}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="font-medium">Curry:</span>
+                    <span className="font-bold">Curry:</span>
                     <span>{calculateCurry()}</span>
                 </div>
             </div>

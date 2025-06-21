@@ -5,7 +5,7 @@ export function Eatslider({ index }) {
     const value = tostiList[index]?.slider ?? 2;
   return (
     <>
-        <p className="mb-2">Hoeveel Tosti's?</p>
+        <p className="mb-2 text-2xl">Hoeveel Tosti's?</p>
         <div className="w-full max-w-xs mb-6">
         <input
             type="range"
@@ -16,21 +16,21 @@ export function Eatslider({ index }) {
             onChange={(e) => updateTosti(index, 'slider', Number(e.target.value))}
             className="range"
         />
-        <div className="flex justify-between px-2.5 mt-2 text-xs">
+        <div className="flex justify-between px-2.5 mt-2 text-s">
             <span>|</span>
             <span>|</span>
             <span>|</span>
             <span>|</span>
             <span>|</span>
         </div>
-        <div className="flex justify-between px-2.5 mt-2 text-xs">
+        <div className="flex justify-between px-2.5 mt-2 text-m">
             <span>🤡</span>
             <span>🤏</span>
             <span>👍</span>
             <span>👏</span>
             <span>🗿</span>
         </div>
-        <div className="flex justify-between px-2.5 mt-2 text-xs">
+        <div className="flex justify-between px-2.5 mt-2 text-m">
             <span>(1)</span>
             <span>(2)</span>
             <span>(3)</span>

@@ -10,8 +10,8 @@ export function ThemeSelector(){
         <label className="flex cursor-pointer gap-2">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -25,12 +25,12 @@ export function ThemeSelector(){
                 value="light"
                 data-toggle-theme="light,dark"
                 data-act-class="ACTIVECLASS"
-                className="toggle theme-controller"
+                className="toggle theme-controller rounded-full"
             />
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

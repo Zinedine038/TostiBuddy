@@ -12,43 +12,41 @@ export function Storage() {
   } = useStorageStore();
 
   return (
-    <div className="container mx-auto p-4 w-1/2">
-      <h1 className="text-2xl font-bold mb-4">Hoeveel hebben we nog?</h1>
-
+    <div className="container mx-auto p-4 w-7/10">
+      <h1 className="text-6xl font-bold mb-24">Hoeveel hebben we nog?</h1>
       <form className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium mb-1">Plakken Brood</label>
+        <div className='mb-12'>
+          <label className="block text-2xl font-medium mb-4">Plakken Brood</label>
           <input
             type="number"
             min="0"
             value={bread}
             onChange={(e) => setField('bread', Number(e.target.value))}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full text-2xl"
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Plakken Kaas</label>
+        <div className='mb-12'>
+          <label className="block text-2xl font-medium mb-4">Plakken Kaas</label>
           <input
             type="number"
             min="0"
             value={cheese}
             onChange={(e) => setField('cheese', Number(e.target.value))}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full text-2xl"
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Plakken Ham</label>
+        <div className='mb-12'>
+          <label className="block text-2xl font-medium mb-4">Plakken Ham</label>
           <input
             type="number"
             min="0"
             value={ham}
             onChange={(e) => setField('ham', Number(e.target.value))}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full text-2xl"
           />
         </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1">Ketchup</label>
+        <div className='mb-12'>
+          <label className="block text-2xl font-medium mb-4">Ketchup</label>
           <div className="flex items-center gap-4">
             <input
               type="range"
@@ -57,14 +55,13 @@ export function Storage() {
               step="1"
               value={ketchup}
               onChange={(e) => setField('ketchup', Number(e.target.value))}
-              className="range range-primary w-full"
+              className="range range-primary w-full text-2xl"
             />
             <span className="w-16 text-right">{ketchup} ml</span>
           </div>
         </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1">Curry</label>
+        <div className='mb-12'>
+          <label className="block text-2xl font-medium mb-4">Curry</label>
           <div className="flex items-center gap-4">
             <input
               type="range"
@@ -73,7 +70,7 @@ export function Storage() {
               step="1"
               value={curry}
               onChange={(e) => setField('curry', Number(e.target.value))}
-              className="range range-secondary w-full"
+              className="range range-secondary w-full text-2xl"
             />
             <span className="w-16 text-right">{curry} ml</span>
           </div>
@@ -81,7 +78,7 @@ export function Storage() {
       </form>
 
       <Link to="/tosti">
-        <button className="btn btn-primary w-5/20 mt-6">Naar bunkeraars</button>
+        <button className="btn btn-primary h-20 w-8/20 mt-6 text-4xl">Naar bunkeraars</button>
       </Link>
     </div>
   );
