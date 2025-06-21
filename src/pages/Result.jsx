@@ -68,22 +68,30 @@ export function Result() {
     }
 
     function calculateKetchup() {
-        const totalKetchup = tostiList.reduce((acc, tosti) => acc + (tosti.ketchup ? ketchupPerTosti : 0), 0) - ketchup;
-        if( totalKetchup <= 0) {
+        const totalNeeded = tostiList.reduce((acc, tosti) => acc + (tosti.ketchup ? ketchupPerTosti : 0), 0);
+        const shortage = totalNeeded - ketchup;
+    
+        if (shortage <= 0) {
             return "Geen ketchup meer nodig";
         }
-        const bottles = Math.ceil(totalKetchup / ketchupBottle);
+    
+        const bottles = Math.ceil(shortage / ketchupBottle);
         return bottles === 1 ? "1 fles" : `${bottles} flessen`;
     }
+    
 
     function calculateCurry() {
-        const totalCurry = tostiList.reduce((acc, tosti) => acc + (tosti.curry ? curryPerTosti : 0), 0) - curry;
-        if( totalCurry <= 0) {
+        const totalNeeded = tostiList.reduce((acc, tosti) => acc + (tosti.curry ? curryPerTosti : 0), 0);
+        const shortage = totalNeeded - curry;
+    
+        if (shortage <= 0) {
             return "Geen curry meer nodig";
         }
-        const bottles = Math.ceil(totalCurry / curryBottle);
+    
+        const bottles = Math.ceil(shortage / curryBottle);
         return bottles === 1 ? "1 fles" : `${bottles} flessen`;
     }
+    
 
     return(
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-40rem)]">
