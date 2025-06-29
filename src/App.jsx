@@ -10,6 +10,7 @@ import { Tosti } from './pages/Tosti.jsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Storage } from './pages/Storage.jsx'
 import { Result } from './pages/Result.jsx'
+import { FourOhFour } from './pages/FourOhFour.jsx'
 
 function RoutesWrapper() {
   const location = useLocation()
@@ -40,6 +41,11 @@ function RoutesWrapper() {
         <Route path='/result' element={
           <PageWrapper>
             <Result />
+          </PageWrapper>
+          } />
+        <Route path='*' element={
+          <PageWrapper>
+              <FourOhFour/>
           </PageWrapper>
           } />
       </Routes>
