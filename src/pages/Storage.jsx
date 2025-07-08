@@ -16,7 +16,7 @@ export function Storage() {
       <h1 className="text-6xl font-bold mb-24">Hoeveel hebben we nog?</h1>
       <form className="space-y-4">
         <div className='mb-12'>
-          <label className="block text-2xl font-medium mb-4">Plakken Brood</label>
+          <label className="block text-2xl font-medium mb-4">Sneetjes Brood</label>
           <input
             type="number"
             min="0"
