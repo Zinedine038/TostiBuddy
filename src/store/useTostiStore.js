@@ -4,9 +4,9 @@ export const useTostiStore = create((set) => ({
   tostiList: [
     {
       name: '',
-      slider: 2,
+      slider: 3,
       ham: true,
-      ketchup: true,
+      ketchup: false,
       curry: true,
     },
   ],
@@ -17,9 +17,9 @@ export const useTostiStore = create((set) => ({
         ...state.tostiList,
         {
           name: '',
-          slider: 2,
+          slider: 3,
           ham: true,
-          ketchup: true,
+          ketchup: false,
           curry: true,
         },
       ],
